@@ -14,7 +14,6 @@ export const Modal: React.FC<ModalProps> = ({ children }) => {
           className={modalStyle["close-icon"]}
           src={closingIcon}
           alt="closing-icon"
-          onClick={}
         />
         {children}
       </div>

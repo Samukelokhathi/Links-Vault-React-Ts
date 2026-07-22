@@ -4,9 +4,10 @@ import closingIcon from "./Asset/x-circle (1).svg";
 
 type ModalProps = {
   children: React.ReactNode;
+  close: () => void;
 };
 
-export const Modal: React.FC<ModalProps> = ({ children }) => {
+export const Modal: React.FC<ModalProps> = ({ children, close }) => {
   const stopPropagation = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation;
   };
@@ -17,6 +18,7 @@ export const Modal: React.FC<ModalProps> = ({ children }) => {
           className={modalStyle["close-icon"]}
           src={closingIcon}
           alt="closing-icon"
+          onClick={close}
         />
         {children}
       </div>

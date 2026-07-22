@@ -1,14 +1,12 @@
-import './App.css'
+import "./App.css";
+import Form from "./Form/Form";
 
 function App() {
-
   return (
     <>
-      <h1>Links Vault React! </h1>
-      <h1>Links Vault React! </h1>
-
+      <Form />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

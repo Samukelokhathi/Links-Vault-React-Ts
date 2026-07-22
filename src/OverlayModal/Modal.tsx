@@ -1,5 +1,6 @@
 import React from "react";
 import modalStyle from "./Modal.module.css";
+import closingIcon from "./Asset/x-circle (1).svg";
 
 type ModalProps = {
   children: React.ReactNode;
@@ -7,11 +8,11 @@ type ModalProps = {
 
 export const Modal: React.FC<ModalProps> = ({ children }) => {
   return (
-    <div>
-      <div>
+    <div className={modalStyle["modal"]}>
+      <div className={modalStyle["modal-child"]}>
         <img
           className={modalStyle["close-icon"]}
-          src=""
+          src={closingIcon}
           alt="closing-icon"
           onClick={}
         />

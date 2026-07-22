@@ -1,0 +1,24 @@
+.modal {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    background-color: bisque;
+}
+
+.modal-child {
+    position: relative;
+}
+
+.close-icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}

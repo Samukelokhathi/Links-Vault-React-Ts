@@ -1,4 +1,3 @@
-import React from "react";
 import { Modal } from "../OverlayModal/Modal";
 import formStyle from "./Form.module.css";
 

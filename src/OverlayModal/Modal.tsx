@@ -11,6 +11,9 @@ export const Modal: React.FC = () => {
   };
 
   const [isOpen, setIsOpen] = useState(true);
+  const [title, setTitle] = useState("");
+  const [url, setUrl] = useState("");
+  const [description, setDescription] = useState("");
   return (
     <dialog open={isOpen}>
       <div className={modalStyle["modal-child"]} onClick={stopPropagation}>
@@ -23,9 +26,27 @@ export const Modal: React.FC = () => {
           }}
         />
         <form>
-          <Input label="Title" onChange={() => {}} />
-          <Input label="Url" onChange={() => {}} />
-          <Input label="description" onChange={() => {}} />
+          <Input
+            label="Title"
+            value={title}
+            onChange={(e) => {
+              setTitle(e.target.value);
+            }}
+          />
+          <Input
+            label="Url"
+            value={url}
+            onChange={(e) => {
+              setUrl(e.target.value);
+            }}
+          />
+          <textarea
+            name="description"
+            value={description}
+            onChange={(e) => {
+              setDescription(e.target.value);
+            }}
+          ></textarea>
           <Button value={"Save"} />
         </form>
       </div>

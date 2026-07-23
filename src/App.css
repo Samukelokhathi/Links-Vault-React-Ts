@@ -7,6 +7,10 @@ box-sizing: border-box;
 
 
 html, body, #root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #180D16;

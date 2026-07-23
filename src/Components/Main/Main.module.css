@@ -1,0 +1,16 @@
+.main-container{
+    width: 80vw;
+    height: 90vh;
+    border: 2px solid red;
+    padding: 3rem;
+}
+
+.logo-container{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FDA134;
+}

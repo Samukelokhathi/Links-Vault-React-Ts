@@ -14,7 +14,6 @@ html, body, #root {
     height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #180D16;
-    color: #111827;
 }
 
 @media screen and (min-width: 300px) and (max-width: 1080px) {

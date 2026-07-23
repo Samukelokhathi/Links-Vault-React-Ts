@@ -3,6 +3,7 @@ import mainStyle from "./Main.module.css";
 import logo from "./main asset/link-45deg.svg";
 import { Text } from "../Text/Text";
 import textStyle from "../Text/Text.module.css";
+import inputStyle from "../Input/Input.module.css";
 
 const Main = () => {
   return (
@@ -31,6 +32,10 @@ const Main = () => {
           children={"Keep every link that matters."}
           className={textStyle["variant-h1"]}
         />
+      </div>
+
+      <div className={inputStyle["input-btn-container"]}>
+        <input type="text" className={inputStyle["search-input"]} />
       </div>
     </div>
   );

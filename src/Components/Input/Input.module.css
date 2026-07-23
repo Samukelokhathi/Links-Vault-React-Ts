@@ -1,0 +1,6 @@
+.input-btn-container{
+    border: 3px solid blue;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+}

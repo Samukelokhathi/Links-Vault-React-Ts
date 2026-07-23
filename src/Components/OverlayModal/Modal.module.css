@@ -1,4 +1,4 @@
-.modal {
+/* .modal {
     position: absolute;
     top: 0;
     width: 100vw;
@@ -8,10 +8,13 @@
     justify-content: center;
     background-color: bisque;
     align-items: center;
-}
+} */
 
 .modal-child {
     position: relative;
+    border: 4px solid rebeccapurple;
+    width: 20vw;
+    height: 40vh;
 }
 
 .close-icon {

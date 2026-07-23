@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import modalStyle from "./Modal.module.css";
 import closingIcon from "../OverlayModal/Asset/x-circle (1).svg";
 import { Input } from "../Input/Input";
-import { Button } from "../Components/Button/Button";
+import Button from "../Button/Button";
 // import formStyle from "../Form/Form.module.css";
 
 export const Modal: React.FC = () => {
@@ -47,7 +47,7 @@ export const Modal: React.FC = () => {
               setDescription(e.target.value);
             }}
           ></textarea>
-          <Button value={"Save"} />
+          <Button text={"SaveLink"} />
         </form>
       </div>
     </dialog>

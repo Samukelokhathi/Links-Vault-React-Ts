@@ -1,0 +1,17 @@
+.globalBtn{
+    border-radius: 30px;
+    font-size: 1rem;
+    padding: 0.6rem 2rem;
+    font-weight: 400;
+    font-size: 0.9rem;
+    background:#0E453D ;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.globalBtn:hover {
+    background:rgb(8, 126, 20) ;
+    box-shadow: 0 0 25px rgb(8, 160, 23);
+}

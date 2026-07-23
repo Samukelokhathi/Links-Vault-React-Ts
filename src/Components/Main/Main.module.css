@@ -3,6 +3,10 @@
     height: 90vh;
     border: 2px solid red;
     padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    color: white;
 }
 
 .logo-heading{

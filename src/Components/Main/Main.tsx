@@ -24,6 +24,14 @@ const Main = () => {
           />
         </div>
       </div>
+
+      <div className={mainStyle["opening-head-container"]}>
+        <Text
+          variant={"h1"}
+          children={"Keep every link that matters."}
+          className={textStyle["variant-h1"]}
+        />
+      </div>
     </div>
   );
 };

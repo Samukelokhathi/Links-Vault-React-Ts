@@ -1,11 +1,10 @@
 import "./App.css";
-import { Modal } from "./Components/OverlayModal/Modal";
+import Main from "./Components/Main/Main";
 
 function App() {
   return (
     <div>
-      <Modal />
-      <div></div>
+      <Main />
     </div>
   );
 }

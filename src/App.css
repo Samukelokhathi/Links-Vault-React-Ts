@@ -1,0 +1,28 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+
+
+html, body, #root {
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #180D16;
+    color: #111827;
+}
+
+@media screen and (min-width: 300px) and (max-width: 1080px) {
+    html, body, #root {
+        width: 100%;
+        overflow-x: hidden;
+    }
+    img, video, svg, canvas {
+        max-width: 100%;
+        height: auto;
+    }
+    html {
+        font-size: 15px;
+    }
+}

@@ -62,6 +62,8 @@ const Main = () => {
 
         {isOpen && <Modal onClose={onClose} isOpen={isOpen} />}
       </div>
+
+      <div className={mainStyle["display-cards"]}></div>
     </div>
   );
 };

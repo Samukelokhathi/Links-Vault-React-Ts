@@ -3,7 +3,7 @@
     height: 8vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 3rem;
 }
 
 .search-input {
@@ -15,14 +15,6 @@
     position: relative;
     padding-left: 25px;
     font-size: 15px;
+    color: white;
 }
 
-/* .search-icon {
-    color: white;
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    pointer-events: none;
-    left: 10;
-    transform: translateY(-50%);
-} */

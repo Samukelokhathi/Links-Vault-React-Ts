@@ -5,6 +5,7 @@ interface BtnProps {
   text: string;
   style?: React.CSSProperties;
   className?: string;
+  onChange?: () => {};
 }
 
 const Button: React.FC<BtnProps> = ({ text, style, className }) => {

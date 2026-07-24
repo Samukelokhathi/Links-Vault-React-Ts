@@ -1,10 +1,11 @@
-import { Modal } from "../OverlayModal/Modal";
+// import { Modal } from "../OverlayModal/Modal";
 import mainStyle from "./Main.module.css";
 import logo from "./main asset/link-45deg.svg";
 import { Text } from "../Text/Text";
 import textStyle from "../Text/Text.module.css";
 import inputStyle from "../Input/Input.module.css";
 import Button from "../Button/Button"
+// import searchIcon from "./main asset/search.png"
 
 const Main = () => {
   return (
@@ -36,7 +37,8 @@ const Main = () => {
       </div>
 
       <div className={inputStyle["input-btn-container"]}>
-        <input type="text" className={inputStyle["search-input"]} />
+        {/* <img src={searchIcon} alt="Search-Icon" className={inputStyle["search-icon"]} /> */}
+        <input type="text" className={inputStyle["search-input"]} placeholder="Search by title, URL, description, or tag..." />
 
         <Button text={"Add New Link"} className={mainStyle["add-link"]} />
       </div>

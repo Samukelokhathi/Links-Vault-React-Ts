@@ -12,4 +12,17 @@
     border-radius: 15px;
     background-color: #131824;
     border: 1px solid #2B3342;
+    position: relative;
+    padding-left: 25px;
+    font-size: 15px;
 }
+
+/* .search-icon {
+    color: white;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+    left: 10;
+    transform: translateY(-50%);
+} */

@@ -18,3 +18,24 @@
     color: white;
 }
 
+.input-label-container{
+    display: flex;
+    border: 2p solid blue;
+    /* background-color: rebeccapurple; */
+    height: 7vh;
+    gap: 3px;
+    flex-direction: column;
+
+}
+input{
+    width: 100%;
+    height: 4vh;
+    border-radius: 7px;
+    border: 1px solid #2B3342;
+    position: relative;
+    padding-left: 25px;
+    font-size: 15px;
+    color: black;
+    
+
+}

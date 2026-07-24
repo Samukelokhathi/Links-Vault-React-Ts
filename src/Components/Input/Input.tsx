@@ -21,7 +21,7 @@ export const Input: React.FC<InputProps> = ({
   name,
 }) => {
   return (
-    <div>
+    <div className={inputStyle["input-label-container"]}>
       <label className={inputStyle["input-label"]}>{label}</label>
       <input
         name={name}

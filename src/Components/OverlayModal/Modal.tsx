@@ -3,6 +3,7 @@ import modalStyle from "./Modal.module.css";
 import closingIcon from "../OverlayModal/Asset/x-circle (1).svg";
 import { Input } from "../Input/Input";
 import Button from "../Button/Button";
+import { Text } from "../Text/Text";
 // import formStyle from "../Form/Form.module.css";
 
 type ModalProps = {
@@ -41,14 +42,20 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen }) => {
             }}
           />
           <Input
-            label="Url"
+            label="URL"
             value={url}
             onChange={(e) => {
               setUrl(e.target.value);
             }}
           />
+
+          <Text
+            variant={"p"}
+            children={"Description"}
+            className={modalStyle.description}
+          />
           <textarea
-            name="description"
+            name="Description"
             value={description}
             onChange={(e) => {
               setDescription(e.target.value);

@@ -10,7 +10,6 @@ dialog {
   height: 100vh;
   max-width: 100%;
   max-height: 100%;
-  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,7 +39,7 @@ dialog {
 .modal-child form {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 10px;
 }
 
 .modal-child textarea {

@@ -37,4 +37,6 @@
     width: 95%;
     height: 100%;
     border: 2px solid blue;
+    display: flex;
+    gap: 30px;
 }

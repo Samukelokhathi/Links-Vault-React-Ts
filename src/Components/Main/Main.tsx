@@ -1,11 +1,15 @@
-import { Modal } from "../OverlayModal/Modal";
-import mainStyle from "./Main.module.css";
-import logo from "./main asset/link-45deg.svg";
-import { Text } from "../Text/Text";
-import textStyle from "../Text/Text.module.css";
-import inputStyle from "../Input/Input.module.css";
-import Button from "../Button/Button";
 import { useState } from "react";
+import { Text } from "../Text/Text";
+import { Modal } from "../OverlayModal/Modal";
+import LinkCard from "../LinkCard/LinkCard";
+
+import textStyle from "../Text/Text.module.css";
+import Button from "../Button/Button";
+
+import logo from "./main asset/link-45deg.svg";
+
+import inputStyle from "../Input/Input.module.css";
+import mainStyle from "./Main.module.css";
 
 const Main = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -63,7 +67,9 @@ const Main = () => {
         {isOpen && <Modal onClose={onClose} isOpen={isOpen} />}
       </div>
 
-      <div className={mainStyle["display-cards"]}></div>
+      <div className={mainStyle["display-cards"]}>
+        <LinkCard />
+      </div>
     </div>
   );
 };

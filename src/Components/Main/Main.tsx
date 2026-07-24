@@ -5,9 +5,11 @@ import { Text } from "../Text/Text";
 import textStyle from "../Text/Text.module.css";
 import inputStyle from "../Input/Input.module.css";
 import Button from "../Button/Button";
-// import searchIcon from "./main asset/search.png"
+import { useState } from "react";
 
 const Main = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className={mainStyle["main-container"]}>
       <div className={mainStyle["logo-heading"]}>
@@ -43,8 +45,15 @@ const Main = () => {
           placeholder="Search by title, URL, description, or tag..."
         />
 
-        <Button text={"Add New Link"} className={mainStyle["add-link-btn"]} />
-        <Modal />
+        <Button
+          onClick={() => {
+            setIsModalOpen(true);
+          }}
+          text={"Add New Link"}
+          className={mainStyle["add-link-btn"]}
+        />
+
+        {isModalOpen && <Modal />}
       </div>
     </div>
   );

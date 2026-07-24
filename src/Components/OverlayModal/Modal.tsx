@@ -14,6 +14,7 @@ export const Modal: React.FC = () => {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [description, setDescription] = useState("");
+
   return (
     <dialog open={isOpen}>
       <div className={modalStyle["modal-child"]} onClick={stopPropagation}>

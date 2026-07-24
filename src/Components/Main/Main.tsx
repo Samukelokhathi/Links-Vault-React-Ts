@@ -8,7 +8,14 @@ import Button from "../Button/Button";
 import { useState } from "react";
 
 const Main = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const onOpen = () => {
+    setIsOpen(true);
+  };
+  const onClose = () => {
+    setIsOpen(false);
+  };
 
   return (
     <div className={mainStyle["main-container"]}>
@@ -47,13 +54,13 @@ const Main = () => {
 
         <Button
           onClick={() => {
-            setIsModalOpen(true);
+            onOpen();
           }}
           text={"Add New Link"}
           className={mainStyle["add-link-btn"]}
         />
 
-        {isModalOpen && <Modal />}
+        {isOpen && <Modal onClose={onClose} isOpen={isOpen} />}
       </div>
     </div>
   );

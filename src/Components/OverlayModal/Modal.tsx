@@ -5,12 +5,16 @@ import { Input } from "../Input/Input";
 import Button from "../Button/Button";
 // import formStyle from "../Form/Form.module.css";
 
-export const Modal: React.FC = () => {
+type ModalProps = {
+  onClose: () => void;
+  isOpen: boolean;
+};
+
+export const Modal: React.FC<ModalProps> = ({ onClose, isOpen }) => {
   const stopPropagation = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
 
-  const [isOpen, setIsOpen] = useState(true);
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [description, setDescription] = useState("");
@@ -23,7 +27,7 @@ export const Modal: React.FC = () => {
           src={closingIcon}
           alt="closing-icon"
           onClick={() => {
-            setIsOpen(!isOpen);
+            onClose();
           }}
         />
         <form>

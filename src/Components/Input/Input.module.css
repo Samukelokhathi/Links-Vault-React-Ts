@@ -1,6 +1,15 @@
-.input-btn-container{
-    border: 3px solid blue;
-    height: 5vh;
+.input-btn-container {
+    /* border: 3px solid blue; */
+    height: 8vh;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+
+.search-input {
+    width: 80%;
+    height: 7vh;
+    border-radius: 15px;
+    background-color: #131824;
+    border: 1px solid #2B3342;
 }

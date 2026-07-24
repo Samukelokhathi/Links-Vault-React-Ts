@@ -4,6 +4,7 @@ import logo from "./main asset/link-45deg.svg";
 import { Text } from "../Text/Text";
 import textStyle from "../Text/Text.module.css";
 import inputStyle from "../Input/Input.module.css";
+import Button from "../Button/Button"
 
 const Main = () => {
   return (
@@ -36,7 +37,10 @@ const Main = () => {
 
       <div className={inputStyle["input-btn-container"]}>
         <input type="text" className={inputStyle["search-input"]} />
+
+        <Button text={"Add New Link"} className={mainStyle["add-link"]} />
       </div>
+
     </div>
   );
 };

@@ -1,4 +1,4 @@
-.main-container{
+.main-container {
     width: 80vw;
     height: 90vh;
     border: 2px solid red;
@@ -9,17 +9,23 @@
     color: white;
 }
 
-.logo-heading{
+.logo-heading {
     display: flex;
     gap: 8px;
 }
 
-.logo-container{
+.logo-container {
     width: 40px;
     height: 40px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #FDA134;
+}
+
+.add-link {
+    height: 7vh;
+    border-radius: 7px;
     background-color: #FDA134;
 }

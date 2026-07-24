@@ -23,6 +23,8 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen }) => {
     <dialog open={isOpen}>
       <div className={modalStyle["modal-child"]} onClick={stopPropagation}>
         <img
+          height={30}
+          width={30}
           className={modalStyle["close-icon"]}
           src={closingIcon}
           alt="closing-icon"

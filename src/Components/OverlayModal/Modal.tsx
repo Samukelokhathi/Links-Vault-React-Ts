@@ -4,21 +4,42 @@ import closingIcon from "../OverlayModal/Asset/x-circle (1).svg";
 import { Input } from "../Input/Input";
 import Button from "../Button/Button";
 import { Text } from "../Text/Text";
-// import formStyle from "../Form/Form.module.css";
+import type { itemLinks } from "../Types/ItemLinks"
 
 type ModalProps = {
   onClose: () => void;
   isOpen: boolean;
 };
 
+
+
 export const Modal: React.FC<ModalProps> = ({ onClose, isOpen }) => {
   const stopPropagation = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
 
+  const [links, setLinks] = useState<itemLinks[]>([])
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [description, setDescription] = useState("");
+
+
+  const handleSave = () => {
+    const newLink: itemLinks = {
+      id: Date.now(),
+      title,
+      url,
+      description
+    }
+    const updatedLinks = [...links, newLink]
+    localStorage.setItem('links', JSON.stringify(updatedLinks))
+    setLinks(updatedLinks)
+
+
+
+
+  }
+
 
   return (
     <dialog open={isOpen}>
@@ -61,7 +82,7 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen }) => {
               setDescription(e.target.value);
             }}
           ></textarea>
-          <Button text={"SaveLink"} />
+          <Button text={"SaveLink"} onClick={handleSave} />
         </form>
       </div>
     </dialog>

@@ -10,9 +10,16 @@ import logo from "./main asset/link-45deg.svg";
 
 import inputStyle from "../Input/Input.module.css";
 import mainStyle from "./Main.module.css";
+import type { itemLinks } from "../Types/ItemLinks";
+import LinkCardList from "../LinkCard/LinkCardList";
+
+interface CardProps {
+  listItems: itemLinks;
+}
 
 const Main = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [links, setLinks] = useState<itemLinks[]>([])
 
   const onOpen = () => {
     setIsOpen(true);
@@ -20,6 +27,8 @@ const Main = () => {
   const onClose = () => {
     setIsOpen(false);
   };
+
+
 
   return (
     <div className={mainStyle["main-container"]}>
@@ -68,7 +77,7 @@ const Main = () => {
       </div>
 
       <div className={mainStyle["display-cards"]}>
-        <LinkCard />
+        <LinkCardList listItems={links} />
       </div>
     </div>
   );

@@ -34,12 +34,19 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen }) => {
     const updatedLinks = [...links, newLink]
     localStorage.setItem('links', JSON.stringify(updatedLinks))
     setLinks(updatedLinks)
-
-
-
-
   }
 
+
+  // const getFormLinks = () => {
+  //   const storedLinks = localStorage.getItem('links');
+  //   if (!storedLinks) return {
+  //     id: Date.now(),
+  //     title,
+  //     description
+  //   }
+
+  //   return JSON.parse(storedLinks)
+  // }
 
   return (
     <dialog open={isOpen}>

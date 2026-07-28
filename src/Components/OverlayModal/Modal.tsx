@@ -9,44 +9,33 @@ import type { itemLinks } from "../Types/ItemLinks"
 type ModalProps = {
   onClose: () => void;
   isOpen: boolean;
+  handleSave: (itemLink: itemLinks) => void
+  links: itemLinks[]
+
 };
 
 
 
-export const Modal: React.FC<ModalProps> = ({ onClose, isOpen }) => {
+export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, links }) => {
   const stopPropagation = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
 
-  const [links, setLinks] = useState<itemLinks[]>([])
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [description, setDescription] = useState("");
 
-
-  const handleSave = () => {
+  const onSave = () => {
     const newLink: itemLinks = {
       id: Date.now(),
       title,
       url,
       description
+
     }
-    const updatedLinks = [...links, newLink]
-    localStorage.setItem('links', JSON.stringify(updatedLinks))
-    setLinks(updatedLinks)
+    handleSave(newLink)
+
   }
-
-
-  // const getFormLinks = () => {
-  //   const storedLinks = localStorage.getItem('links');
-  //   if (!storedLinks) return {
-  //     id: Date.now(),
-  //     title,
-  //     description
-  //   }
-
-  //   return JSON.parse(storedLinks)
-  // }
 
   return (
     <dialog open={isOpen}>
@@ -89,7 +78,7 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen }) => {
               setDescription(e.target.value);
             }}
           ></textarea>
-          <Button text={"SaveLink"} onClick={handleSave} />
+          <Button text={"SaveLink"} onClick={onSave} />
         </form>
       </div>
     </dialog>

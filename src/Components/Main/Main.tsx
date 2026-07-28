@@ -19,7 +19,10 @@ interface CardProps {
 
 const Main = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [links, setLinks] = useState<itemLinks[]>([])
+  const [links, setLinks] = useState<itemLinks[]>(() => {
+    const savedLinks = localStorage.getItem('links')
+    return savedLinks ? JSON.parse(savedLinks) : []
+  })
 
   const onOpen = () => {
     setIsOpen(true);
@@ -27,6 +30,14 @@ const Main = () => {
   const onClose = () => {
     setIsOpen(false);
   };
+
+  const handleSave = (newLink: itemLinks) => {
+
+
+    const updatedLinks = [...links, newLink]
+    localStorage.setItem('links', JSON.stringify(updatedLinks))
+    setLinks(updatedLinks)
+  }
 
 
 
@@ -73,7 +84,7 @@ const Main = () => {
           className={mainStyle["add-link-btn"]}
         />
 
-        {isOpen && <Modal onClose={onClose} isOpen={isOpen} />}
+        {isOpen && <Modal onClose={onClose} isOpen={isOpen} handleSave={handleSave} links={links} />}
       </div>
 
       <div className={mainStyle["display-cards"]}>

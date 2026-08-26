@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import modalStyle from "./Modal.module.css";
 import closingIcon from "../OverlayModal/Asset/x-circle (1).svg";
 import { Input } from "../Input/Input";
@@ -11,12 +11,14 @@ type ModalProps = {
   isOpen: boolean;
   handleSave: (itemLink: itemLinks) => void
   links: itemLinks[]
+  editingLink?: itemLinks | null;
 
 };
 
 
 
-export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, links }) => {
+export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, links, editingLink }) => {
+
   const stopPropagation = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
@@ -24,16 +26,45 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, links
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [description, setDescription] = useState("");
+  const [tags, setTags] = useState("");
+
+  useEffect(() => {
+
+    if (editingLink) {
+
+      setTitle(editingLink.title);
+      setUrl(editingLink.url);
+      setDescription(editingLink.description);
+      setTags(editingLink.tags);
+
+    } else {
+
+      setTitle("");
+      setUrl("");
+      setDescription("");
+      setTags("");
+
+    }
+
+  }, [editingLink, isOpen]);
 
   const onSave = () => {
     const newLink: itemLinks = {
-      id: Date.now(),
+      id: editingLink ? editingLink.id : Date.now(),
       title,
       url,
-      description
+      description,
+      tags
 
     }
     handleSave(newLink)
+
+    setTitle("");
+    setUrl("");
+    setDescription("");
+    setTags("");
+
+    onClose();
 
   }
 

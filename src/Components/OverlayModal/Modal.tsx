@@ -3,7 +3,6 @@ import modalStyle from "./Modal.module.css";
 import closingIcon from "../OverlayModal/Asset/x-circle (1).svg";
 import { Input } from "../Input/Input";
 import Button from "../Button/Button";
-import { Text } from "../Text/Text";
 import type { itemLinks } from "../Types/ItemLinks"
 
 type ModalProps = {

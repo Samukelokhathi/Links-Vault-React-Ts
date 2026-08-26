@@ -3,7 +3,5 @@ export type itemLinks = {
     title: string;
     url: string;
     description: string;
-    tags: string
-    onEdit: boolean;
-    onDelete: boolean
+
 }

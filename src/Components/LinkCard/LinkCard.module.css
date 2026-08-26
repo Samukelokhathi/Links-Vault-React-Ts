@@ -1,21 +1,19 @@
-.link-card{
+.link-card {
     width: 20%;
     height: 50%;
-    border: 2px dotted green;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
 }
 
-.text-container{
+.text-container {
     display: flex;
     gap: 1rem;
     flex-direction: column;
 }
 
-.btns-container{
+.btns-container {
     display: flex;
     gap: 5px;
 }
-

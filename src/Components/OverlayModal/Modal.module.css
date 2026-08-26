@@ -13,7 +13,7 @@ dialog {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: red;
+  /* background-color: red; */
 }
 
 
@@ -46,7 +46,6 @@ dialog {
 .modal-child textarea {
   min-height: 140px;
   padding: 16px;
-  border: 1px solid #ccc;
   border-radius: 8px;
   font-family: inherit;
   font-size: 16px;

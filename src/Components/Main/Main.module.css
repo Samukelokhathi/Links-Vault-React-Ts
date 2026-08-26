@@ -1,7 +1,6 @@
 .main-container {
     width: 80vw;
     height: 90vh;
-    border: 2px solid red;
     padding: 3rem;
     display: flex;
     flex-direction: column;
@@ -36,7 +35,6 @@
 .display-cards {
     width: 95%;
     height: 100%;
-    border: 2px solid blue;
     display: flex;
     gap: 30px;
 }

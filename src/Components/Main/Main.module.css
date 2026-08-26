@@ -6,6 +6,7 @@
     flex-direction: column;
     gap: 3rem;
     color: white;
+    box-sizing: border-box;
 }
 
 .logo-heading {
@@ -37,4 +38,38 @@
     height: 100%;
     display: flex;
     gap: 30px;
+}
+
+
+@media (max-width: 900px) {
+
+    .main-container {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .link-card {
+        width: 45%;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .main-container {
+        width: 100%;
+        padding: 1.5rem;
+        gap: 2rem;
+    }
+
+    .display-cards {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .link-card {
+        width: 100%;
+        min-width: 0;
+    }
+
 }

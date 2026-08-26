@@ -1,18 +1,19 @@
 import linkCardStyle from "./LinkCard.module.css";
 import { Text } from "../Text/Text";
+
 import Button from "../Button/Button";
 import type { itemLinks } from "../Types/ItemLinks";
 import type React from "react";
 
-type CardProps = itemLinks;
-
-// const storedTask = localStorage.getItem("links")
-// console.log(storedTask)
-
-
+type LinkCardProps = itemLinks & {
+  onEdit: (id: string) => void;
+  onDelete: (id: string) => void;
+};
 
 
-const LinkCard: React.FC<CardProps> = ({ id, title, url, description }) => {
+
+
+const LinkCard: React.FC<LinkCardProps> = ({ id, title, url, description }) => {
   return (
     <div className={linkCardStyle["link-card"]}>
       <div className={linkCardStyle["text-container"]}>

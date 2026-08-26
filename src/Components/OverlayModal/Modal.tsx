@@ -70,7 +70,9 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, links
 
   return (
     <dialog open={isOpen}>
+
       <div className={modalStyle["modal-child"]} onClick={stopPropagation}>
+
         <img
           height={30}
           width={30}
@@ -81,6 +83,7 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, links
             onClose();
           }}
         />
+
         <form>
           <Input
             label="Title"
@@ -89,19 +92,15 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, links
               setTitle(e.target.value);
             }}
           />
+
           <Input
-            label="URL"
-            value={url}
+            label="Tags"
+            value={tags}
             onChange={(e) => {
-              setUrl(e.target.value);
+              setTags(e.target.value);
             }}
           />
 
-          <Text
-            variant={"p"}
-            children={"Description"}
-            className={modalStyle.description}
-          />
           <textarea
             name="Description"
             value={description}
@@ -109,9 +108,14 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, links
               setDescription(e.target.value);
             }}
           ></textarea>
-          <Button text={"SaveLink"} onClick={onSave} />
+
+
+          <Button text={editingLink ? "Update Link" : "Save Link"} onClick={onSave} />
+
         </form>
+
       </div>
+
     </dialog>
   );
 };

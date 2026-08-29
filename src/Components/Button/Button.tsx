@@ -6,14 +6,17 @@ interface BtnProps {
   style?: React.CSSProperties;
   className?: string;
   onClick?: () => void;
+  type?: "submit"
 }
 
-const Button: React.FC<BtnProps> = ({ text, style, className, onClick }) => {
+const Button: React.FC<BtnProps> = ({ text, style, className, onClick, type }) => {
   return (
     <button
       className={`${btnStyles.globalBtn} ${className || ""}`}
       style={style}
       onClick={onClick}
+      type={type}
+
     >
       {text}
     </button>

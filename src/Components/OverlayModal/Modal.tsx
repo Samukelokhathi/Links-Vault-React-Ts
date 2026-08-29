@@ -83,7 +83,10 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, editi
           }}
         />
 
-        <form>
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          onSave();
+        }}>
           <Input
             label="Title"
             value={title}
@@ -116,7 +119,7 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, editi
             }}
 
           />
-          <Button text={editingLink ? "Update Link" : "Save Link"} onClick={onSave} />
+          <Button type={'submit'} text={editingLink ? "Update Link" : "Save Link"} onClick={() => console.log(onSave)} />
 
         </form>
 

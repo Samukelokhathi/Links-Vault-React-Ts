@@ -2,7 +2,6 @@ import type { itemLinks } from "../../Types/ItemLinks";
 import LinkCard from "./LinkCard";
 
 type LinkCardListProps = {
-
     listItems: itemLinks[];
     onEdit: (id: number) => void;
     onDelete: (id: number) => void;

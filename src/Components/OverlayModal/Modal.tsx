@@ -93,20 +93,30 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, editi
           />
 
           <Input
-            label="Tags"
+            label="URL"
             value={tags}
             onChange={(e) => {
               setTags(e.target.value);
             }}
           />
 
-          <textarea
-            name="Description"
-            value={description}
+          <Input
+            label="DESCRIPTION"
+            type="textarea"
+            value={tags}
             onChange={(e) => {
-              setDescription(e.target.value);
+              setTags(e.target.value);
             }}
-          ></textarea>
+
+          />
+
+          <Input
+            label="TAGS (OPTIONAL)"
+            value={tags}
+            onChange={(e) => {
+              setTags(e.target.value);
+            }}
+          />
 
 
           <Button text={editingLink ? "Update Link" : "Save Link"} onClick={onSave} />

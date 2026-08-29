@@ -11,33 +11,44 @@ import logo from "./main asset/link-45deg.svg";
 import inputStyle from "../Input/Input.module.css";
 import mainStyle from "./Main.module.css";
 import type { itemLinks } from "../../Types/ItemLinks";
-// import LinkCardList from "../LinkCard/LinkCardList";
+import LinkCardList from "../LinkCard/LinkCardList";
 
-// interface CardProps {
-//   listItems: itemLinks;
-// }
+import { saveLinks, getLinks } from "../../Utils/Storage";
 
 const Main = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [links, setLinks] = useState<itemLinks[]>(() => {
-    const savedLinks = localStorage.getItem('links')
-    return savedLinks ? JSON.parse(savedLinks) : []
-  })
+  //GET SAVED LINKS
+  const [links, setLinks] = useState<itemLinks[]>(getLinks)
 
   const onOpen = () => {
     setIsOpen(true);
   };
+
   const onClose = () => {
     setIsOpen(false);
   };
 
+  // SAVE NEW LINK
   const handleSave = (newLink: itemLinks) => {
-
-
     const updatedLinks = [...links, newLink]
-    localStorage.setItem('links', JSON.stringify(updatedLinks))
+
+    saveLinks(updatedLinks)
     setLinks(updatedLinks)
   }
+
+  const handleEdit = (id: number) => {
+    console.log("Edit link:", id);
+  };
+
+  const handleDelete = (id: number) => {
+    const updatedLinks = links.filter(
+      (link) => link.id !== id
+    );
+
+    saveLinks(updatedLinks);
+
+    setLinks(updatedLinks);
+  };
 
 
 
@@ -47,17 +58,20 @@ const Main = () => {
         <div className={mainStyle["logo-container"]}>
           <img src={logo} alt="link-img" height={20} width={20} />
         </div>
+
         <div className={mainStyle["heading-parent"]}>
           <Text
             variant={"h2"}
             children={"Link Vault"}
             className={textStyle["variant-h2"]}
           />
+
           <Text
             variant={"p"}
             children={"YOUR BOOKMARKS, ANYWHERE"}
             className={textStyle["variant-p"]}
           />
+
         </div>
       </div>
 
@@ -88,7 +102,7 @@ const Main = () => {
       </div>
 
       <div className={mainStyle["display-cards"]}>
-        {/* <LinkCardList listItems={links} />   */}
+        <LinkCardList listItems={links} onEdit={handleEdit} onDelete={handleDelete} />
       </div>
     </div>
   );

@@ -15,7 +15,6 @@ type ModalProps = {
 };
 
 
-
 export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, editingLink }) => {
 
   const stopPropagation = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -48,6 +47,7 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, editi
   }, [editingLink, isOpen]);
 
   const onSave = () => {
+
     const newLink: itemLinks = {
       id: editingLink ? editingLink.id : Date.now(),
       title,
@@ -94,9 +94,9 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, editi
 
           <Input
             label="URL"
-            value={tags}
+            value={url}
             onChange={(e) => {
-              setTags(e.target.value);
+              setUrl(e.target.value);
             }}
           />
 
@@ -110,15 +110,12 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, editi
           <Input
             label="DESCRIPTION"
             type="textarea"
-            value={tags}
+            value={description}
             onChange={(e) => {
-              setTags(e.target.value);
+              setDescription(e.target.value);
             }}
 
           />
-
-
-
           <Button text={editingLink ? "Update Link" : "Save Link"} onClick={onSave} />
 
         </form>

@@ -1,4 +1,4 @@
-import type { itemLinks } from "../Types/ItemLinks";
+import type { itemLinks } from "../../Types/ItemLinks";
 import LinkCard from "./LinkCard";
 
 type LinkCardListProps = {

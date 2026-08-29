@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Text } from "../Text/Text";
 import { Modal } from "../OverlayModal/Modal";
-import LinkCard from "../LinkCard/LinkCard";
+// import LinkCard from "../LinkCard/LinkCard";
 
 import textStyle from "../Text/Text.module.css";
 import Button from "../Button/Button";
@@ -10,12 +10,12 @@ import logo from "./main asset/link-45deg.svg";
 
 import inputStyle from "../Input/Input.module.css";
 import mainStyle from "./Main.module.css";
-import type { itemLinks } from "../Types/ItemLinks";
-import LinkCardList from "../LinkCard/LinkCardList";
+import type { itemLinks } from "../../Types/ItemLinks";
+// import LinkCardList from "../LinkCard/LinkCardList";
 
-interface CardProps {
-  listItems: itemLinks;
-}
+// interface CardProps {
+//   listItems: itemLinks;
+// }
 
 const Main = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -88,7 +88,7 @@ const Main = () => {
       </div>
 
       <div className={mainStyle["display-cards"]}>
-        <LinkCardList listItems={links} />
+        {/* <LinkCardList listItems={links} />   */}
       </div>
     </div>
   );

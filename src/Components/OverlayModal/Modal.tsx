@@ -3,7 +3,7 @@ import modalStyle from "./Modal.module.css";
 import closingIcon from "../OverlayModal/Asset/x-circle (1).svg";
 import { Input } from "../Input/Input";
 import Button from "../Button/Button";
-import type { itemLinks } from "../Types/ItemLinks"
+import type { itemLinks } from "../../Types/ItemLinks"
 
 type ModalProps = {
   onClose: () => void;
@@ -16,7 +16,7 @@ type ModalProps = {
 
 
 
-export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, links, editingLink }) => {
+export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, editingLink }) => {
 
   const stopPropagation = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();

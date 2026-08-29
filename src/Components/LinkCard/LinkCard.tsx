@@ -2,7 +2,7 @@ import linkCardStyle from "./LinkCard.module.css";
 import { Text } from "../Text/Text";
 
 import Button from "../Button/Button";
-import type { itemLinks } from "../Types/ItemLinks";
+import type { itemLinks } from "../../Types/ItemLinks";
 import type React from "react";
 
 type LinkCardProps = itemLinks & {

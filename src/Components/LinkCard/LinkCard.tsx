@@ -11,12 +11,25 @@ type LinkCardProps = itemLinks & {
 };
 
 
-
-
 const LinkCard: React.FC<LinkCardProps> = ({ id, title, url, description, tags, onDelete, onEdit }) => {
 
+
+  const handleCardClick = () => {
+    window.open(url, "_blank")
+  }
+
+  const handleButtonClick = (
+    e: React.MouseEvent<HTMLDivElement>
+  ) => {
+    e.stopPropagation();
+  };
+
+
+
   return (
-    <div className={linkCardStyle["link-card"]}>
+    <div className={linkCardStyle["link-card"]}
+      onClick={handleCardClick}
+    >
 
       <div className={linkCardStyle["text-container"]}>
         <Text variant={"h1"} children={title} />
@@ -28,10 +41,19 @@ const LinkCard: React.FC<LinkCardProps> = ({ id, title, url, description, tags, 
 
       </div>
 
-      <div className={linkCardStyle["btns-container"]}>
-
-        <Button text={"edit"} className={"edit-btn"} onClick={() => onEdit(id)} />
-        <Button text={"del"} className={"del-btn"} onClick={() => onDelete(id)} />
+      <div className={linkCardStyle["btns-container"]}
+        onClick={handleButtonClick}
+      >
+        <Button
+          text={"edit"}
+          className={"edit-btn"}
+          onClick={() => onEdit(id)}
+        />
+        <Button
+          text={"del"}
+          className={"del-btn"}
+          onClick={() => onDelete(id)}
+        />
       </div>
     </div>
   );

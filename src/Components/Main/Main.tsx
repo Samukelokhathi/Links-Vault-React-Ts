@@ -17,6 +17,7 @@ import type { itemLinks } from "../../Types/ItemLinks";
 import { saveLinks, getLinks } from "../../Utils/Storage";
 
 const Main = () => {
+
   const [isOpen, setIsOpen] = useState<boolean>(false);
   //GET SAVED LINKS
   const [links, setLinks] = useState<itemLinks[]>(getLinks)
@@ -54,6 +55,7 @@ const Main = () => {
     saveLinks(updatedLinks)
     setLinks(updatedLinks)
     setEditingLink(null);
+    setIsOpen(false)
   }
 
   const handleEdit = (id: number) => {
@@ -129,12 +131,23 @@ const Main = () => {
           className={mainStyle["add-link-btn"]}
         />
 
-        {isOpen && <Modal onClose={onClose} isOpen={isOpen} handleSave={handleSave} links={links} />}
+        {isOpen && (
+          <Modal onClose={onClose}
+            isOpen={isOpen}
+            handleSave={handleSave}
+            links={links}
+            editingLink={editingLink}
+          />)}
+
 
       </div>
 
       <div className={mainStyle["display-cards"]}>
-        <LinkCardList listItems={links} onEdit={handleEdit} onDelete={handleDelete} />
+        <LinkCardList
+          listItems={links}
+          onEdit={handleEdit}
+          onDelete={handleDelete}
+        />
       </div>
     </div>
   );

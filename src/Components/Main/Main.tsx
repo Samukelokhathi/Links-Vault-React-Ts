@@ -10,8 +10,9 @@ import logo from "./main asset/link-45deg.svg";
 
 import inputStyle from "../Input/Input.module.css";
 import mainStyle from "./Main.module.css";
-import type { itemLinks } from "../../Types/ItemLinks";
 import LinkCardList from "../LinkCard/LinkCardList";
+
+import type { itemLinks } from "../../Types/ItemLinks";
 
 import { saveLinks, getLinks } from "../../Utils/Storage";
 
@@ -19,6 +20,9 @@ const Main = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   //GET SAVED LINKS
   const [links, setLinks] = useState<itemLinks[]>(getLinks)
+
+  const [editingLink, setEditingLink] = useState<itemLinks | null>(null);
+
 
   const onOpen = () => {
     setIsOpen(true);
@@ -30,14 +34,39 @@ const Main = () => {
 
   // SAVE NEW LINK
   const handleSave = (newLink: itemLinks) => {
-    const updatedLinks = [...links, newLink]
+    let updatedLinks: itemLinks[];
 
+    if (editingLink) {
+
+      // UPDATE EXISTING LINK
+
+      updatedLinks = links.map((link) =>
+        link.id === newLink.id
+          ? newLink
+          : link
+      );
+
+    } else {
+      // ADD NEW LINK
+
+      updatedLinks = [...links, newLink];
+    }
     saveLinks(updatedLinks)
     setLinks(updatedLinks)
+    setEditingLink(null);
   }
 
   const handleEdit = (id: number) => {
-    console.log("Edit link:", id);
+    const linkToEdit = links.find(
+      (link) => link.id === id
+    );
+
+    if (linkToEdit) {
+
+      setEditingLink(linkToEdit);
+
+      setIsOpen(true);
+    }
   };
 
   const handleDelete = (id: number) => {
@@ -45,8 +74,9 @@ const Main = () => {
       (link) => link.id !== id
     );
 
-    saveLinks(updatedLinks);
+    console.log(updatedLinks)
 
+    saveLinks(updatedLinks);
     setLinks(updatedLinks);
   };
 
@@ -92,6 +122,7 @@ const Main = () => {
 
         <Button
           onClick={() => {
+            setEditingLink(null);
             onOpen();
           }}
           text={"Add New Link"}
@@ -99,6 +130,7 @@ const Main = () => {
         />
 
         {isOpen && <Modal onClose={onClose} isOpen={isOpen} handleSave={handleSave} links={links} />}
+
       </div>
 
       <div className={mainStyle["display-cards"]}>

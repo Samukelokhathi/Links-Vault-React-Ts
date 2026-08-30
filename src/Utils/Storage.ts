@@ -10,7 +10,11 @@ export const getLinks = (): itemLinks[] => {
         return [];
     }
 
-    return JSON.parse(savedLinks);
+    try {
+        return JSON.parse(savedLinks);
+    } catch {
+        return [];
+    }
 };
 
 // SAVE LINKS TO LOCAL STORAGE

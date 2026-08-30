@@ -13,8 +13,8 @@ const LinkCardList: React.FC<LinkCardListProps> = ({ listItems, onDelete, onEdit
             {listItems.length > 0 ? (
                 listItems.map((link) => (
                     <LinkCard key={link.id} {...link}
-                        onEdit={() => onEdit}
-                        onDelete={() => onDelete} />
+                        onEdit={onEdit}
+                        onDelete={onDelete} />
                 ))
             ) : (
                 <p>No Links Saved</p>

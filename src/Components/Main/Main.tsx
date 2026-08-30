@@ -24,6 +24,21 @@ const Main = () => {
 
   const [editingLink, setEditingLink] = useState<itemLinks | null>(null);
 
+  const [search, setSearch] = useState("")
+
+  const filteredLinks = links.filter((link) => {
+
+    const searchValue = search.toLowerCase();
+
+    return (
+      link.title.toLowerCase().includes(searchValue) ||
+      link.url.toLowerCase().includes(searchValue) ||
+      link.description.toLowerCase().includes(searchValue) ||
+      link.tags.toLowerCase().includes(searchValue)
+    );
+
+  });
+
 
   const onOpen = () => {
     setIsOpen(true);
@@ -120,6 +135,8 @@ const Main = () => {
           type="text"
           className={inputStyle["search-input"]}
           placeholder="Search by title, URL, description, or tag..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
 
         <Button
@@ -144,7 +161,7 @@ const Main = () => {
 
       <div className={mainStyle["display-cards"]}>
         <LinkCardList
-          listItems={links}
+          listItems={filteredLinks}
           onEdit={handleEdit}
           onDelete={handleDelete}
         />
@@ -154,4 +171,3 @@ const Main = () => {
 };
 
 export default Main;
-

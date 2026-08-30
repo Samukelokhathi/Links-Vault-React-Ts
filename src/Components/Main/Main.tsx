@@ -8,7 +8,6 @@ import Button from "../Button/Button";
 
 import logo from "./main asset/link-45deg.svg";
 
-import inputStyle from "../Input/Input.module.css";
 import mainStyle from "./Main.module.css";
 import LinkCardList from "../LinkCard/LinkCardList";
 
@@ -130,10 +129,10 @@ const Main = () => {
         />
       </div>
 
-      <div className={inputStyle["input-btn-container"]}>
+      <div className={mainStyle["input-btn-container"]}>
         <input
           type="text"
-          className={inputStyle["search-input"]}
+          className={mainStyle["search-input"]}
           placeholder="Search by title, URL, description, or tag..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -171,3 +170,4 @@ const Main = () => {
 };
 
 export default Main;
+

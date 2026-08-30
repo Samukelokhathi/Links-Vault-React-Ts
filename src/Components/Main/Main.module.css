@@ -7,12 +7,40 @@
     gap: 3rem;
     color: white;
     box-sizing: border-box;
-
 }
 
 .logo-heading {
     display: flex;
     gap: 8px;
+}
+
+.input-btn-container {
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.search-input {
+    width: 80%;
+    height: 7vh;
+    border-radius: 15px;
+    background-color: #131824;
+    border: 1px solid #2B3342;
+    padding-left: 25px;
+    font-size: 15px;
+    color: white;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.search-input::placeholder {
+    color: #8a8f98;
+}
+
+.search-input:focus {
+    border-color: #FDA134;
 }
 
 .logo-container {
@@ -29,7 +57,11 @@
     height: 7vh;
     border-radius: 7px;
     background-color: #FDA134;
-
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.5rem;
 }
 
 .display-cards {
@@ -37,47 +69,118 @@
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
-
 }
 
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .main-container {
+        width: 85vw;
+        padding: 2.5rem;
+    }
+}
 
-@media (min-width: 321px) and (max-width: 600px) {
+@media (min-width: 769px) and (max-width: 1024px) {
+    .main-container {
+        width: 90vw;
+        padding: 2rem;
+    }
+
+    .input-btn-container {
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
     .main-container {
         width: 100%;
-        height: auto;
-        min-height: 90vh;
         padding: 1.5rem;
         gap: 2rem;
     }
 
-    .display-cards {
-        width: 100%;
+    .input-btn-container {
         flex-direction: column;
-        gap: 20px;
+        align-items: stretch;
+        height: auto;
+        gap: 1rem;
+    }
+
+    .search-input {
+        width: 100%;
+        height: 48px;
+        font-size: 14px;
     }
 
     .add-link-btn {
         width: 100%;
-        height: 50px;
+        height: 48px;
+    }
+
+    .display-cards {
+        gap: 20px;
     }
 }
 
+@media (min-width: 321px) and (max-width: 480px) {
+    .main-container {
+        width: 100%;
+        padding: 1.2rem;
+        gap: 1.5rem;
+    }
+
+    .input-btn-container {
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        gap: 0.9rem;
+    }
+
+    .search-input {
+        width: 100%;
+        height: 46px;
+        font-size: 13px;
+        padding-left: 18px;
+    }
+
+    .add-link-btn {
+        width: 100%;
+        height: 46px;
+    }
+
+    .display-cards {
+        flex-direction: column;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+}
 
 @media (max-width: 320px) {
     .main-container {
         width: 100%;
-        height: auto;
         padding: 1rem;
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
 
-    .display-cards {
+    .input-btn-container {
         flex-direction: column;
-        gap: 15px;
+        align-items: stretch;
+        height: auto;
+        gap: 0.8rem;
+    }
+
+    .search-input {
+        width: 100%;
+        height: 44px;
+        font-size: 13px;
+        padding-left: 15px;
     }
 
     .add-link-btn {
         width: 100%;
-        height: 45px;
+        height: 44px;
+    }
+
+    .display-cards {
+        flex-direction: column;
+        gap: 12px;
+        flex-wrap: wrap;
     }
 }

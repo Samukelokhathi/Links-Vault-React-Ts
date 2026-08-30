@@ -1,29 +1,3 @@
-.input-btn-container {
-    height: 8vh;
-
-    display: flex;
-    align-items: center;
-
-    gap: 3rem;
-}
-
-.search-input {
-    width: 80%;
-    height: 7vh;
-
-    border-radius: 15px;
-
-    background-color: #131824;
-    border: 1px solid #2B3342;
-
-    padding-left: 25px;
-
-    font-size: 15px;
-    color: white;
-
-    box-sizing: border-box;
-}
-
 .input-label-container {
     display: flex;
     flex-direction: column;
@@ -72,29 +46,4 @@ textarea.input {
 .input-error {
     color: red;
     font-size: 12px;
-}
-
-
-@media (max-width: 320px) {
-    .input-btn-container {
-        height: auto;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.8rem;
-    }
-
-    .search-input {
-        width: 100%;
-        height: 45px;
-        padding-left: 15px;
-        font-size: 13px;
-    }
-
-    .input {
-        font-size: 14px;
-    }
-
-    textarea.input {
-        min-height: 110px;
-    }
 }

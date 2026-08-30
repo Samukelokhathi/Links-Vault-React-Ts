@@ -12,6 +12,9 @@ type InputProps = {
   type?: "text" | "textarea" | "url"
   rows?: number;
   required?: boolean
+  className?: string;
+  containerClassName?: string;
+  placeholder?: string
 };
 
 export const Input: React.FC<InputProps> = ({
@@ -24,7 +27,10 @@ export const Input: React.FC<InputProps> = ({
   error,
   name,
   type = "text",
-  rows = 4
+  rows = 4,
+  className,
+  placeholder,
+
 }) => {
   return (
     <div className={inputStyle["input-label-container"]}>
@@ -38,8 +44,10 @@ export const Input: React.FC<InputProps> = ({
           value={value}
           onChange={onChange}
           rows={rows}
-          className={inputStyle.input}
           required={required}
+          className={`${inputStyle.input} ${className || ""}`}
+          placeholder={placeholder}
+
         />
       ) : (
         <input
@@ -49,8 +57,9 @@ export const Input: React.FC<InputProps> = ({
           style={style}
           value={value}
           onChange={onChange}
-          className={inputStyle.input}
           required={required}
+          className={`${inputStyle.input} ${className || ""}`}
+          placeholder={placeholder}
         />
       )}
 

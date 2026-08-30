@@ -1,32 +1,78 @@
-# React + TypeScript + Vite
+## 📸 Preview
+<img width="1891" height="871" alt="image" src="https://socialify.git.ci/Samukelokhathi/Links-Vault-React-Ts/image?language=1&owner=1&name=1&stargazers=1&theme=Light" />
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+# 🔗 Link Vault — React-TS-Task-2
 
-Currently, two official plugins are available:
+A simple (MVP) web app for keeping track of your favorite links — like browser bookmarks, but accessible from anywhere instead of being locked to one browser. Users can save, search, edit, and delete links with a title, URL, description, and optional tags. Built as Task 2 for React (Lesson 2), focused on array methods, objects, `useState`, props, and browser localStorage.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+### Clone the repository
+```bash
+git clone https://github.com/Samukelokhathi/Links-Vault-React-Ts.git
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### Navigate into the project
+```bash
+cd Links-Vault-React-Ts
+```
+
+### Install dependencies
+```bash
+npm install
+```
+
+### Start the development server
+```bash
+npm run dev
+```
+
+The application will be available at:
+```
+http://localhost:5173
+```
+
+---
+
+## ✨ Features
+
+- **Save links** with a title, URL, description, and optional tags
+- **View** all saved links in a responsive card layout
+- **Edit** existing links
+- **Delete** links
+- **Search** saved links by title, URL, description, or tags
+- **Persistence** via browser `localStorage` — no backend required
+- Fully responsive layout, styled with plain CSS and media queries (no CSS frameworks)
+
+---
+
+## 🛠️ Technologies Used
+
+- React
+- TypeScript
+- Vite
+- CSS3 (plain CSS Modules + media queries, no UI libraries)
+- HTML5
+- Browser `localStorage`
+
+---
+
+## 📚 What I Learned
+
+During this project I practiced:
+- Working with array methods (`map`, `filter`) for CRUD operations
+- Structuring and updating objects/state immutably
+- Using React's `useState` hook to manage app state
+- Passing and handling props between components
+- Reading from and writing to browser `localStorage`
+- Building reusable, composable React components (`Button`, `Input`, `Text`, `LinkCard`)
+- Writing responsive layouts with plain CSS media queries across multiple breakpoints (320px–1200px)
+- Structuring a React + TypeScript project
+
+---
+
+## 🛠️ Documents Links
+- 🔗 Live Site: https://links-vault-react-ts.vercel.app/
+- 🔗 GitHub Repository: https://github.com/Samukelokhathi/Links-Vault-React-Ts

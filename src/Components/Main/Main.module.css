@@ -67,7 +67,7 @@
 .display-cards {
     height: 100%;
     display: flex;
-    gap: 30px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
@@ -149,6 +149,7 @@
         flex-direction: column;
         gap: 16px;
         flex-wrap: wrap;
+        object-fit: fill;
     }
 }
 

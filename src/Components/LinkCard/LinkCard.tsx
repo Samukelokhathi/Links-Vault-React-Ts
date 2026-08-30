@@ -36,7 +36,7 @@ const LinkCard: React.FC<LinkCardProps> = ({ id, title, url, description, tags, 
         <Text variant={"p"} children={url} />
         <Text variant={"p"} children={description} />
         {tags && (
-          <Text variant={"p"}>`Tags: ${tags}`</Text>
+          <Text variant={"p"}>Tag: {tags}</Text>
         )}
 
       </div>

@@ -73,3 +73,28 @@ textarea.input {
     color: red;
     font-size: 12px;
 }
+
+
+@media (max-width: 320px) {
+    .input-btn-container {
+        height: auto;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
+    }
+
+    .search-input {
+        width: 100%;
+        height: 45px;
+        padding-left: 15px;
+        font-size: 13px;
+    }
+
+    .input {
+        font-size: 14px;
+    }
+
+    textarea.input {
+        min-height: 110px;
+    }
+}

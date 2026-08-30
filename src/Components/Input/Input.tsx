@@ -9,14 +9,16 @@ type InputProps = {
   label: string;
   error?: string;
   name?: string;
-  type?: "text" | "textarea"
+  type?: "text" | "textarea" | "url"
   rows?: number;
+  required?: boolean
 };
 
 export const Input: React.FC<InputProps> = ({
   id,
   value,
   onChange,
+  required,
   style,
   label,
   error,
@@ -37,6 +39,7 @@ export const Input: React.FC<InputProps> = ({
           onChange={onChange}
           rows={rows}
           className={inputStyle.input}
+          required={required}
         />
       ) : (
         <input
@@ -47,6 +50,7 @@ export const Input: React.FC<InputProps> = ({
           value={value}
           onChange={onChange}
           className={inputStyle.input}
+          required={required}
         />
       )}
 

@@ -92,15 +92,19 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, editi
             value={title}
             onChange={(e) => {
               setTitle(e.target.value);
+
             }}
+            required
           />
 
           <Input
             label="URL"
             value={url}
+            type="url"
             onChange={(e) => {
               setUrl(e.target.value);
             }}
+            required
           />
 
           <Input
@@ -114,6 +118,7 @@ export const Modal: React.FC<ModalProps> = ({ onClose, isOpen, handleSave, editi
             label="DESCRIPTION"
             type="textarea"
             value={description}
+            required
             onChange={(e) => {
               setDescription(e.target.value);
             }}
